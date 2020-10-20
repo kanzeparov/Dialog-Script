@@ -28,7 +28,10 @@ app.post('/', function (req, res) {
         conv = Iconv('windows-1251', 'utf8');
         let decodedString = conv.convert(buf).toString();
         decodedString = deleteAllSymbols(strip_html_tags(decodedString.toLowerCase()));
-        var words = decodedString.split(' ');
+        var wordsBef = decodedString.split(' ');
+        var words = wordsBef.filter(function (el) {
+            return el != "";
+        });
         console.log(words)
 
         var index = lunr(function () {
@@ -66,7 +69,7 @@ app.post('/', function (req, res) {
         console.log(e);
     }
 
-    res.send(base64decode(result+"dwdwqdqw"));
+    res.send("ok" + base64decode(result.toString()));
 })
 
 
