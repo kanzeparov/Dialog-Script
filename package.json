@@ -12,6 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "iconv": "^3.0.0"
+    "iconv": "^3.0.0",
+    "lunr": "^2.3.9",
+    "lunr-languages": "^1.4.0",
+    "nodejs-base64": "^1.0.3"
   }
 }
